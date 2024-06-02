@@ -1,0 +1,11 @@
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/bin/Debug/net8.0/Common.deps.json
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/bin/Debug/net8.0/Common.dll
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/bin/Debug/net8.0/Common.pdb
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/obj/Debug/net8.0/Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/obj/Debug/net8.0/Common.AssemblyInfoInputs.cache
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/obj/Debug/net8.0/Common.AssemblyInfo.cs
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/obj/Debug/net8.0/Common.csproj.CoreCompileInputs.cache
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/obj/Debug/net8.0/Common.dll
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/obj/Debug/net8.0/refint/Common.dll
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/obj/Debug/net8.0/Common.pdb
+/Users/aorkne/Work/Learn/LargeFileProcessing/Common/obj/Debug/net8.0/ref/Common.dll

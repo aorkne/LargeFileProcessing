@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "bPtZ+Q957onb41VADCADahymO5UGb0G0MdoPIcdAG0Q71V8zPgoOhSVPvO3VsgDg28fDQjiGgdA1Zq+DI9m1pQ==",
+  "success": true,
+  "projectFilePath": "/Users/aorkne/Work/Learn/LargeFileProcessing/FileSorter/FileSorter.csproj",
+  "expectedPackageFiles": [
+    "/Users/aorkne/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "/Users/aorkne/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
