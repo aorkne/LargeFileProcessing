@@ -34,14 +34,13 @@ public sealed class SortManager : ISortManager
         // Break the file into manageable chunks and sort them
         var chunkFiles = new List<string>();
         int chunkIndex = 0;
-        foreach (var chunk in ReadChunks(sourceFilePath))
+        foreach (Span<string> chunk in ReadChunks(sourceFilePath))
         {
             var chunkFile = Path.Combine(tempDir, $"chunk_{chunkIndex++}.txt");
             
-            Span<string> enumerable = chunk as string[] ?? chunk.ToArray();
-            enumerable.Sort(_customStringComparer);
-            _fileWriter.WriteLines(enumerable, chunkFile);
-            enumerable.Clear();
+            chunk.Sort(_customStringComparer);
+            _fileWriter.WriteLines(chunk, chunkFile);
+            chunk.Clear();
             
             chunkFiles.Add(chunkFile);
         }
@@ -53,7 +52,7 @@ public sealed class SortManager : ISortManager
         Directory.Delete(tempDir, true);
     }
 
-    private IEnumerable<IEnumerable<string>> ReadChunks(string filePath)
+    private IEnumerable<string[]> ReadChunks(string filePath)
     {
         List<string> currentChunk = new List<string>();
         int totalSize = 0;
@@ -64,7 +63,7 @@ public sealed class SortManager : ISortManager
             
             if (totalSize >= Constants.ChunkSize)
             {
-                yield return currentChunk;
+                yield return currentChunk.ToArray();
 
                 totalSize = 0;
                 currentChunk = new List<string>();
@@ -73,7 +72,7 @@ public sealed class SortManager : ISortManager
 
         if (currentChunk.Count > 0)
         {
-            yield return currentChunk;            
+            yield return currentChunk.ToArray();            
         }
     }
 }

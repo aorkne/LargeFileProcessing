@@ -33,6 +33,12 @@ if (File.Exists(outputFileName))
     File.Delete(outputFilePath);
 }
 
+var tempDir = Path.Combine(DirectoryHelper.FilesDirectory, Constants.TempDirectory);
+if (Directory.Exists(tempDir))
+{
+    Directory.Delete(tempDir, true);
+}
+
 var watch = Stopwatch.StartNew();
 
 sortManager.SortFile(inputFilePath, outputFilePath);
