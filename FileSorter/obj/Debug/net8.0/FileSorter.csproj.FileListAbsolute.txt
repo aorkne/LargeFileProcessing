@@ -18,3 +18,4 @@
 /Users/aorkne/Work/Learn/LargeFileProcessing/FileSorter/bin/Debug/net8.0/Common.pdb
 /Users/aorkne/Work/Learn/LargeFileProcessing/FileSorter/obj/Debug/net8.0/FileSorter.csproj.AssemblyReference.cache
 /Users/aorkne/Work/Learn/LargeFileProcessing/FileSorter/obj/Debug/net8.0/FileSorter.csproj.Up2Date
+/Users/aorkne/Work/Learn/LargeFileProcessing/FileSorter/obj/Debug/net8.0/FileSorter.sourcelink.json

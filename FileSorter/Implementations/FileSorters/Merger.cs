@@ -4,17 +4,17 @@ namespace FileSorter.Implementations.FileSorters;
 
 public sealed class Merger : IMerger
 {
-    private readonly ILineParser _lineParser;
+    private readonly ICustomStringComparer _customStringComparer;
 
-    public Merger(ILineParser lineParser)
+    public Merger(ICustomStringComparer customStringComparer)
     {
-        _lineParser = lineParser;
+        _customStringComparer = customStringComparer;
     }
 
     public void MergeFiles(List<string> inputFiles, string outputFile)
     {
         // Priority queue to keep track of the smallest current lines across all files
-        var priorityQueue = new SortedDictionary<(string, long), List<Queue<(string line, StreamReader reader)>>>();
+        var priorityQueue = new SortedDictionary<string, List<Queue<(string line, StreamReader reader)>>>(_customStringComparer);
 
         // Initialize StreamReaders for each input file
         List<StreamReader> readers = inputFiles.Select(file => new StreamReader(file)).ToList();
@@ -27,18 +27,17 @@ public sealed class Merger : IMerger
                 if (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
-                    var key = _lineParser.ParseLines(line);
 
-                    if (!priorityQueue.ContainsKey(key))
+                    if (!priorityQueue.ContainsKey(line))
                     {
-                        priorityQueue[key] = new List<Queue<(string, StreamReader)>>();
+                        priorityQueue[line] = new List<Queue<(string, StreamReader)>>();
                     }
 
-                    var queue = priorityQueue[key].FirstOrDefault();
+                    var queue = priorityQueue[line].FirstOrDefault();
                     if (queue == null)
                     {
                         queue = new Queue<(string, StreamReader)>();
-                        priorityQueue[key].Add(queue);
+                        priorityQueue[line].Add(queue);
                     }
 
                     queue.Enqueue((line, reader));
@@ -71,18 +70,17 @@ public sealed class Merger : IMerger
                     if (!currentReader.EndOfStream)
                     {
                         var nextLine = currentReader.ReadLine();
-                        var nextKey = _lineParser.ParseLines(nextLine);
 
-                        if (!priorityQueue.ContainsKey(nextKey))
+                        if (!priorityQueue.ContainsKey(nextLine))
                         {
-                            priorityQueue[nextKey] = new List<Queue<(string, StreamReader)>>();
+                            priorityQueue[nextLine] = new List<Queue<(string, StreamReader)>>();
                         }
 
-                        var nextQueue = priorityQueue[nextKey].FirstOrDefault();
+                        var nextQueue = priorityQueue[nextLine].FirstOrDefault();
                         if (nextQueue == null)
                         {
                             nextQueue = new Queue<(string, StreamReader)>();
-                            priorityQueue[nextKey].Add(nextQueue);
+                            priorityQueue[nextLine].Add(nextQueue);
                         }
 
                         nextQueue.Enqueue((nextLine, currentReader));

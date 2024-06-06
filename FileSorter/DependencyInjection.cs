@@ -13,7 +13,6 @@ public static class DependencyInjection
         return new ServiceCollection()
             .AddSingleton<IFileReader, FileReader>()
             .AddSingleton<IFileWriter, FileWriter>()
-            .AddSingleton<ILineParser, LineParser>()
             .AddSingleton<IMerger, Merger>()
             .AddSingleton<ISortManager, SortManager>()
             .AddSingleton<IStringMemoryCalculator, StringMemoryCalculator>()

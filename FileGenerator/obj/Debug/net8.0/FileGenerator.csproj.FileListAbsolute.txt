@@ -18,3 +18,4 @@
 /Users/aorkne/Work/Learn/LargeFileProcessing/FileGenerator/obj/Debug/net8.0/FileGenerator.pdb
 /Users/aorkne/Work/Learn/LargeFileProcessing/FileGenerator/obj/Debug/net8.0/FileGenerator.genruntimeconfig.cache
 /Users/aorkne/Work/Learn/LargeFileProcessing/FileGenerator/obj/Debug/net8.0/ref/FileGenerator.dll
+/Users/aorkne/Work/Learn/LargeFileProcessing/FileGenerator/obj/Debug/net8.0/FileGenerator.sourcelink.json

@@ -26,11 +26,15 @@ public sealed class LargeFileGenerator : IFileGenerator
         
         using var writer = new StreamWriter(filePath);
         long totalSize = 0;
+        int stringCount = 0;
         while (totalSize < sizeInBytes)
         {
+            stringCount++;
             string randomLine = lines[Random.Shared.Next(0, linesCount-1)];
             writer.WriteLine(randomLine);
             totalSize += _stringMemoryCalculator.CalculateStringMemoryUsage(randomLine);
         }
+        
+        Console.WriteLine($"String count: {stringCount}");
     }
 }

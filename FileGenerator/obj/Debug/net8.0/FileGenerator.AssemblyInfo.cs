@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FileGenerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7611df5728626a33ad552cfbf5b1808916f9639e")]
 [assembly: System.Reflection.AssemblyProductAttribute("FileGenerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FileGenerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
