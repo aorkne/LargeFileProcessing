@@ -2,5 +2,5 @@ namespace FileSorter.Interfaces;
 
 public interface IFileWriter
 {
-    void WriteLines(Memory<string> lines, string filePath);
+    void WriteLines(ReadOnlySpan<string> lines, string filePath);
 }

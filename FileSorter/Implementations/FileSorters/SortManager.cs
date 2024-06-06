@@ -38,10 +38,10 @@ public sealed class SortManager : ISortManager
         {
             var chunkFile = Path.Combine(tempDir, $"chunk_{chunkIndex++}.txt");
             
-            Memory<string> enumerable = chunk as string[] ?? chunk.ToArray();
-            enumerable.Span.Sort(_customStringComparer);
+            Span<string> enumerable = chunk as string[] ?? chunk.ToArray();
+            enumerable.Sort(_customStringComparer);
             _fileWriter.WriteLines(enumerable, chunkFile);
-            enumerable.Span.Clear();
+            enumerable.Clear();
             
             chunkFiles.Add(chunkFile);
         }
